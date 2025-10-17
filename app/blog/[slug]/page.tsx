@@ -8,9 +8,10 @@ import Scales from "@/components/scales";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const frontmatter = await getBlogFrontMatterBySlug(params.slug);
+  const { slug } = await params;
+  const frontmatter = await getBlogFrontMatterBySlug(slug);
   if (!frontmatter) {
     return {
       title: "Blog not found",
@@ -25,11 +26,11 @@ export async function generateMetadata({
 export default async function SingleBlog({
   params,
 }: {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
   const blog = await getSingleBlog(slug);
   if (!blog) {
     redirect("/blog");
@@ -51,3 +52,4 @@ export default async function SingleBlog({
     </div>
   );
 }
+

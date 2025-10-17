@@ -8,16 +8,13 @@ import Blogs from "@/components/blogs";
 import Testimonials from "@/components/testimonials";
 import Scales from "@/components/scales";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
+import { Metadata } from "next";
 
-export function meta() {
-  return [
-    { title: "Dhruv Sabharwal Portfolio" },
-    {
-      name: "description",
-      content: "Personal Portfolio Website of Dhruv Sabharwal",
-    },
-  ];
-}
+export const metadata: Metadata = {
+  title: "Portfolio | Dhruv Sabharwal",
+  description:
+    "A professional portfolio website of Dhruv Sabharwal showcases his skills and projects.",
+};
 
 export default function Home() {
   return (

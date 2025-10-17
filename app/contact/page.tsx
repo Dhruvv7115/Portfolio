@@ -46,11 +46,7 @@ export default function Contact() {
           hello! I&#39;d love to hear from you and discuss new opportunities.
         </Subheading>
         <div className="shadow-section-inset h-full w-full grid grid-cols-2 mt-4">
-          <ContactForm
-            handleSubmit={handleSubmit}
-            formData={formData}
-            setFormData={setFormData}
-          />
+          <ContactForm handleSubmit={handleSubmit} setFormData={setFormData} />
         </div>
       </Container>
     </div>

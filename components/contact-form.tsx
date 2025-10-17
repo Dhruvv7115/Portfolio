@@ -3,11 +3,9 @@ import SectionHeading from "@/components/section-heading";
 
 export default function ContactForm({
   handleSubmit,
-  formData,
   setFormData,
 }: {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  formData: { name: string; email: string; message: string };
   setFormData: React.Dispatch<
     React.SetStateAction<{ name: string; email: string; message: string }>
   >;
