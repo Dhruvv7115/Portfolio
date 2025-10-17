@@ -1,0 +1,136 @@
+---
+title: "TypeScript Fundamentals"
+description: "Learn the core concepts of TypeScript including types, interfaces, classes, and advanced features. Master type safety and improve your JavaScript development experience."
+image: "/blogImages/typescript.jpeg"
+date: 2024-06-20
+---
+
+# TypeScript Fundamentals
+
+TypeScript is a superset of JavaScript that adds static type definitions, making your code more robust and maintainable.
+
+## Why TypeScript?
+
+TypeScript provides:
+- **Type Safety**: Catch errors at compile time
+- **Better IDE Support**: Enhanced autocomplete and refactoring
+- **Self-Documenting Code**: Types serve as documentation
+- **Easier Debugging**: Clearer error messages
+
+## Basic Types
+
+### Primitive Types
+```typescript
+let name: string = "John";
+let age: number = 25;
+let isActive: boolean = true;
+let scores: number[] = [95, 87, 92];
+```
+
+### Union Types
+```typescript
+let value: string | number;
+value = "hello"; // OK
+value = 123;     // OK
+```
+
+### Any and Unknown
+```typescript
+let data: any = "could be anything";
+let userInput: unknown = getUserInput();
+```
+
+## Interfaces
+
+Interfaces define the structure of objects:
+
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive?: boolean; // Optional property
+}
+
+const user: User = {
+  id: 1,
+  name: "John Doe",
+  email: "john@example.com"
+};
+```
+
+## Functions
+
+### Function Types
+```typescript
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+// Arrow function with types
+const add = (a: number, b: number): number => a + b;
+```
+
+### Optional Parameters
+```typescript
+function createUser(name: string, age?: number, email?: string) {
+  // Implementation
+}
+```
+
+## Classes
+
+```typescript
+class Person {
+  private name: string;
+  public age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet(): string {
+    return `Hello, I'm ${this.name}`;
+  }
+}
+
+interface Shape {
+  calculateArea(): number;
+}
+
+class Circle implements Shape {
+  constructor(private radius: number) {}
+
+  calculateArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
+```
+
+## Advanced Features
+
+### Generics
+```typescript
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>("hello");
+```
+
+### Type Assertions
+```typescript
+let someValue: unknown = "this is a string";
+let strLength: number = (someValue as string).length;
+```
+
+## Best Practices
+
+1. **Use strict mode** - Enable strict type checking
+2. **Prefer interfaces over types** for object shapes
+3. **Use readonly for immutable data**
+4. **Leverage utility types** like Partial, Required, Pick
+5. **Configure tsconfig.json** appropriately for your project
+
+TypeScript enhances JavaScript development by providing compile-time type checking, better tooling support, and improved code maintainability. Start with basic types and gradually adopt more advanced features as needed.

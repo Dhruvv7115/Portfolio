@@ -1,0 +1,172 @@
+---
+title: "CSS Grid Layout Guide"
+description: "Master CSS Grid Layout - the powerful two-dimensional layout system that makes complex web layouts simple. Learn grid containers, grid items, alignment, and responsive design techniques."
+image: "/blogImages/css-grid.png"
+date: 2024-07-01
+---
+
+# CSS Grid Layout Guide
+
+CSS Grid Layout is a powerful two-dimensional layout method that allows you to create complex web layouts with ease.
+
+## What is CSS Grid?
+
+CSS Grid Layout is a layout system that lets you arrange elements in rows and columns, creating complex layouts that were previously difficult to achieve with floats and positioning.
+
+## Grid Container
+
+To create a grid, first define a grid container:
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+}
+```
+
+## Grid Items
+
+Elements inside the grid container become grid items:
+
+```html
+<div class="grid-container">
+  <div class="grid-item">Item 1</div>
+  <div class="grid-item">Item 2</div>
+  <div class="grid-item">Item 3</div>
+  <div class="grid-item">Item 4</div>
+</div>
+```
+
+## Grid Template Areas
+
+Named grid areas make complex layouts more readable:
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer { grid-area: footer; }
+```
+
+## Responsive Grid
+
+Make grids responsive using fractional units and media queries:
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+## Grid Alignment
+
+Control how items are positioned within their grid areas:
+
+```css
+.grid-container {
+  display: grid;
+  justify-items: center;     /* Horizontal alignment */
+  align-items: center;       /* Vertical alignment */
+  place-items: center;       /* Both */
+}
+
+.grid-item {
+  justify-self: end;         /* Individual item alignment */
+  align-self: start;
+}
+```
+
+## Advanced Grid Features
+
+### Grid Lines
+```css
+.grid-item {
+  grid-column: 1 / 3;        /* Start at line 1, end at line 3 */
+  grid-row: 2 / 4;          /* Start at line 2, end at line 4 */
+}
+```
+
+### Named Grid Lines
+```css
+.grid-container {
+  grid-template-columns: [start] 1fr [middle] 1fr [end] 1fr;
+}
+
+.grid-item {
+  grid-column: start / end;
+}
+```
+
+### Grid Auto-placement
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-auto-rows: 100px;     /* Height for auto-placed rows */
+  grid-auto-flow: column;    /* Fill columns first */
+}
+```
+
+## Practical Examples
+
+### Card Layout
+```css
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+```
+
+### Holy Grail Layout
+```css
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar content ads"
+    "footer footer footer";
+  min-height: 100vh;
+}
+```
+
+## Browser Support
+
+CSS Grid has excellent browser support:
+- Chrome 57+
+- Firefox 52+
+- Safari 10.1+
+- Edge 16+
+
+## Best Practices
+
+1. **Use semantic HTML** with grid layout
+2. **Plan your layout** before implementing
+3. **Use meaningful names** for template areas
+4. **Leverage auto-fit and minmax** for responsive design
+5. **Combine Grid with Flexbox** for component layouts
+
+CSS Grid Layout has revolutionized web design by making complex layouts more accessible and maintainable. Its two-dimensional approach provides unprecedented control over element positioning and alignment.

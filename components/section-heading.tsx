@@ -1,0 +1,66 @@
+"use client";
+import React from "react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+export default function SectionHeading({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: string;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={cn(
+        "relative max-w-lg text-base font-normal mt-4 w-fit",
+        className,
+      )}
+    >
+      <Background />
+      {children.split(" ").map((word, idx) => (
+        <motion.span
+          key={word + idx}
+          className="inline-block"
+          initial={{
+            opacity: 0,
+            y: 5,
+            filter: "blur(1px)",
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          viewport={{ once: true }}
+          transition={{
+            delay: delay + idx * 0.05,
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+        >
+          {word}&nbsp;
+        </motion.span>
+      ))}
+    </h2>
+  );
+}
+
+const Background = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, ease: "easeInOut", delay: 1 }}
+      className="absolute inset-0 h-full w-full scale-[1.04] bg-neutral-100 dark:bg-neutral-900"
+    >
+      <div className="absolute animate-pulse -top-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
+      <div className="absolute animate-pulse -top-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
+      <div className="absolute animate-pulse -bottom-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
+      <div className="absolute animate-pulse -bottom-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
+    </motion.div>
+  );
+};
