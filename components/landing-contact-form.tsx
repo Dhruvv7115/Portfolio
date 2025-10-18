@@ -8,8 +8,8 @@ export default function LandingContactForm() {
     <div className="my-4 px-4 md:px-6 py-6">
       <SectionHeading>Get in touch</SectionHeading>
       <Subheading className="md:pl-0">
-        I'd love to hear from you and discuss new opportunities. Fill out the
-        form below to get in touch.
+        I&apos;d love to hear from you and discuss new opportunities. Fill out
+        the form below to get in touch.
       </Subheading>
       <div className="relative mt-4 max-w-lg">
         <input

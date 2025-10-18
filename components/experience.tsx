@@ -10,7 +10,7 @@ export default function Experience() {
       <SectionHeading>Professional Experience</SectionHeading>
       <div className="flex flex-col my-6 gap-8">
         {experience.map((exp, idx) => (
-          <ExperienceCard experience={exp} key={exp?.title} />
+          <ExperienceCard experience={exp} key={exp?.title + idx} />
         ))}
       </div>
     </div>
