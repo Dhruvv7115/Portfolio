@@ -68,8 +68,8 @@ export default async function Blogs() {
                       })}
                     </p>
                   </div>
-                  <p className="text-secondary text-sm max-w-lg pt-2">
-                    {truncate(blog?.description || "", 130)}
+                  <p className="text-secondary text-sm max-w-md pt-2">
+                    {truncate(blog?.description || "", 92)}
                   </p>
                 </div>
               </Link>
