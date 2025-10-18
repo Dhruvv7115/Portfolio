@@ -10,7 +10,7 @@ export default async function Blogs() {
   return (
     <div className="py-6 px-4 md:px-6">
       <SectionHeading delay={0.2} className="mb-4">
-        I love writing things down
+        Sharing knowledge as I learn
       </SectionHeading>
       <div className="flex flex-col gap-10">
         {blogs.slice(0, 3).map((blog, idx) => (

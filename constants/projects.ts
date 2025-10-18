@@ -13,7 +13,7 @@ import {
   ShadcnIcon,
   TailwindCssIcon,
   TypeScriptIcon,
-} from "@/components/brandSVGs";
+} from "@/components/brand-svgs";
 
 export const projects: Project[] = [
   {

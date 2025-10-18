@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 export const Subheading = ({
   Tag = "h3",
@@ -11,6 +12,12 @@ export const Subheading = ({
   children: string;
   className?: string;
 }) => {
+  const c = cn(
+    "text-secondary max-w-xl px-4 md:px-6 pt-4 text-sm md:text-base",
+    className,
+  );
+  console.log(c);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
@@ -19,7 +26,10 @@ export const Subheading = ({
       viewport={{ once: true }}
     >
       <Tag
-        className={`text-secondary max-w-xl px-4 md:pl-6 pt-4 text-sm md:text-base ${className}`}
+        className={cn(
+          "text-secondary max-w-xl px-4 md:px-6 pt-4 text-sm md:text-base",
+          className,
+        )}
       >
         {children}
       </Tag>

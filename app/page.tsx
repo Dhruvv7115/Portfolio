@@ -8,6 +8,8 @@ import Testimonials from "@/components/testimonials";
 import Scales from "@/components/scales";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { Metadata } from "next";
+import LandingContactForm from "@/components/landing-contact-form";
+import Experience from "@/components/experience";
 
 export const metadata: Metadata = {
   title: "Portfolio | Dhruv Sabharwal",
@@ -44,7 +46,9 @@ export default function Home() {
         </Subheading>
         <Projects limit={3} />
         <Blogs />
+        <Experience />
         <Testimonials />
+        <LandingContactForm />
       </Container>
     </div>
   );

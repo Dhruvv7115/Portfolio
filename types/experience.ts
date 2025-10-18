@@ -9,10 +9,12 @@ export type TechStack = {
   >;
 };
 
-export type Project = {
+export type Experience = {
+  company: string;
   title: string;
+  date: string;
   description: string;
-  image: string;
-  href: string;
+  companyLogo: string;
+  location: string;
   techStack: TechStack[];
 };
