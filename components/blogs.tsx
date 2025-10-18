@@ -8,7 +8,7 @@ import { truncate } from "@/utils/truncate";
 export default async function Blogs() {
   const blogs = await getAllBlogs();
   return (
-    <div className="py-6 px-4 md:px-8">
+    <div className="py-6 px-4 md:px-6">
       <SectionHeading delay={0.2} className="mb-4">
         I love writing things down
       </SectionHeading>

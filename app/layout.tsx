@@ -27,13 +27,15 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <body
-          className={`${inter.variable} antialiased bg-neutral-100 [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-white)]/10`}
-        >
-          <Toaster position="top-center" />
-          <Navbar />
-          {children}
-          <Footer />
+        <body>
+          <main
+            className={`${inter.variable} relative bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-100)]/5`}
+          >
+            <Toaster position="top-center" />
+            <Navbar />
+            {children}
+            <Footer />
+          </main>
         </body>
       </html>
     </ViewTransitions>

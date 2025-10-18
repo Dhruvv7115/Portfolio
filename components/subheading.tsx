@@ -19,7 +19,7 @@ export const Subheading = ({
       viewport={{ once: true }}
     >
       <Tag
-        className={`text-secondary px-4 md:px-8 dark:text-secondary-dark max-w-xl px-4 pt-4 text-sm md:text-base ${className}`}
+        className={`text-secondary max-w-xl px-4 md:pl-6 pt-4 text-sm md:text-base ${className}`}
       >
         {children}
       </Tag>

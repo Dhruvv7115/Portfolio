@@ -38,18 +38,24 @@ export default function ProjectCard({
           ease: "easeInOut",
         },
       }}
-      className="group group relative mb-4 rounded-2xl"
+      className="group group relative rounded-2xl h-full min-h-[360px]"
       viewport={{ once: true }}
     >
-      <Link href={project?.href} target="_blank">
+      <Link
+        href={project?.href}
+        target="_blank"
+        className="flex h-full flex-col"
+      >
         <Image
           src={project?.image}
           alt={project?.title}
           height={300}
           width={300}
-          className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] h-45"
+          loading="lazy"
+          decoding="async"
+          className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] min-h-48"
         />
-        <div className="flex flex-1 flex-col justify-between py-4 transition-all duration-300 group-hover:px-4">
+        <div className="flex flex-1 flex-col gap-2 py-4 transition-all duration-300 group-hover:px-4">
           <div>
             <h2 className="z-20 mt-2 font-medium text-lg tracking-tight text-neutral-500 dark:text-neutral-200">
               {project?.title}
@@ -57,6 +63,45 @@ export default function ProjectCard({
             <p className="mt-2 max-w-[14rem] text-sm text-neutral-500 dark:text-neutral-400">
               {truncate(project?.description || "", 70)}
             </p>
+          </div>
+          <div className="flex max-w-[14rem] flex-wrap gap-1 mt-auto">
+            {project.techStack.map((tech, index) => (
+              <div
+                key={tech.name + index}
+                className="flex items-center justify-start rounded-full border border-neutral-200 bg-neutral-100 p-1 text-xs text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 -mr-3 hover:z-10"
+              >
+                <motion.span
+                  initial="rest"
+                  whileHover="hover"
+                  transition={{
+                    duration: 0.3,
+                    delay: 0,
+                    ease: "easeInOut",
+                  }}
+                  variants={{
+                    rest: { paddingRight: 0 },
+                    hover: { paddingRight: 2 },
+                  }}
+                  className="flex items-center"
+                >
+                  <tech.icon size={20} className="h-4 w-4 shrink-0" />
+                  <motion.span
+                    variants={{
+                      rest: { width: 0 },
+                      hover: { width: "auto" },
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 0,
+                      ease: "easeInOut",
+                    }}
+                    className="overflow-hidden whitespace-nowrap text-neutral-500 dark:text-neutral-200"
+                  >
+                    &nbsp;{tech.name}
+                  </motion.span>
+                </motion.span>
+              </div>
+            ))}
           </div>
         </div>
       </Link>

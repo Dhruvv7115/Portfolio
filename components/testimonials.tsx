@@ -28,7 +28,7 @@ export default function Testimonials() {
     },
   ];
   return (
-    <div className="py-6 px-4 md:px-8 shadow-section-inset border-y border-neutral-100 my-6">
+    <div className="py-6 px-4 md:px-6 shadow-section-inset border-y border-neutral-100 my-6">
       <SectionHeading className="mb-4">People love my work</SectionHeading>
       <div className="flex items-stretch [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
         <Marquee speed={60} pauseOnHover className="py-4">

@@ -73,7 +73,7 @@ export const Timeline = () => {
     },
   ];
   return (
-    <div className="mt-8 flex flex-col items-start justify-center px-4 md:px-8">
+    <div className="flex flex-col items-start justify-center px-4 md:px-6 shadow-section-inset">
       <SectionHeading>Timeline of Achievements</SectionHeading>
 
       <div className="mt-4 flex w-full flex-col items-start justify-center">

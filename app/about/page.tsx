@@ -10,7 +10,7 @@ import Scales from "@/components/scales";
 export default function Page() {
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="relative min-h-screen md:pt-20 md:pb-10">
+      <Container className="relative min-h-screen pt-10 md:pt-20 md:pb-10">
         <Scales />
         <Heading>About Me</Heading>
         <Subheading>

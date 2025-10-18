@@ -42,7 +42,7 @@ export function DraggableCardDemo() {
   ];
   return (
     <div className="flex flex-col mt-6">
-      <SectionHeading className="ml-4 md:ml-8">
+      <SectionHeading className="ml-4 md:ml-6">
         Exploring new ideas.
       </SectionHeading>
       <DraggableCardContainer className="relative flex min-h-[30rem] mt-6 shadow-section-inset w-full items-center justify-center overflow-clip">
@@ -58,7 +58,7 @@ export function DraggableCardDemo() {
               height={600}
               className="pointer-events-none relative z-10 h-50 w-80 object-cover"
             />
-            <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
+            <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300 tracking-tight">
               {item.title}
             </h3>
           </DraggableCardBody>

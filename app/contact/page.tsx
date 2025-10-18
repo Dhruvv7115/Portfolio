@@ -38,14 +38,14 @@ export default function Contact() {
   };
   return (
     <div className="flex min-h-screen items-start justify-start">
-      <Container className="relative min-h-screen px-10 md:pt-20 md:pb-10">
+      <Container className="relative min-h-screen pt-10 md:pt-20 md:pb-10">
         <Scales />
         <Heading>Contact Me</Heading>
         <Subheading>
           Get in touch with me for any questions, collaborations, or just to say
           hello! I&#39;d love to hear from you and discuss new opportunities.
         </Subheading>
-        <div className="shadow-section-inset h-full w-full grid grid-cols-2 mt-4">
+        <div className="shadow-section-inset h-full w-full grid grid-cols-1 md:grid-cols-2 mt-4">
           <ContactForm handleSubmit={handleSubmit} setFormData={setFormData} />
         </div>
       </Container>
