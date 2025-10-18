@@ -29,7 +29,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <main
-            className={`${inter.variable} relative bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-100)]/5`}
+            className={`${inter.variable} relative overflow-x-hidden bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-100)]/5`}
           >
             <Toaster position="top-center" />
             <Navbar />
