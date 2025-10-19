@@ -20,10 +20,10 @@ export const experience: Experience[] = [
   {
     title: "Full Stack Developer Intern",
     company: "Katyayani Organics",
-    location: "Bhopal, India | Remote",
+    // location: "Bhopal, India | Remote",
     date: "July 2025 - Present",
     description:
-      "Developed a comprehensive global connect website for Katyayani Organics to manage leads, deals, and client interactions using MERN stack, UI libraries, and smooth animations.",
+      "Built Katyayani Organics' global connect platform for lead and client management using MERN stack with modern UI/UX.",
     companyLogo: "/experience/katyayaniOrganics.png",
     techStack: [
       {
@@ -79,7 +79,7 @@ export const experience: Experience[] = [
   {
     title: "Mern Stack Developer Intern",
     company: "Sutherland",
-    location: "Chennai, India | Remote",
+    // location: "Chennai, India | Remote",
     date: "June 2025 - July 2025",
     description:
       "Built MERN stack applications with user authentication, API integrations, and responsive design.",

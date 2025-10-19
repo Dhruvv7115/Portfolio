@@ -31,15 +31,12 @@ export default async function Blogs() {
           {allBlogs.map((blog, idx) => (
             <MotionDiv
               key={blog.slug}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 15 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.3,
-                delay: idx * 0.2,
+                delay: idx * 0.1,
                 ease: "easeInOut",
-              }}
-              viewport={{
-                once: true,
               }}
             >
               <Link

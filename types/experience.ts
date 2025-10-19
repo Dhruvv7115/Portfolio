@@ -15,6 +15,6 @@ export type Experience = {
   date: string;
   description: string;
   companyLogo: string;
-  location: string;
+  location?: string;
   techStack: TechStack[];
 };

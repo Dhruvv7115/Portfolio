@@ -6,6 +6,7 @@ import Container from "@/components/container";
 import Scales from "@/components/scales";
 import ContactForm from "@/components/contact-form";
 import { toast } from "sonner";
+import Socials from "@/components/socials";
 
 export default function Contact() {
   const [formData, setFormData] = useState<{
@@ -47,6 +48,8 @@ export default function Contact() {
         </Subheading>
         <div className="shadow-section-inset h-full w-full grid grid-cols-1 md:grid-cols-2 mt-4">
           <ContactForm handleSubmit={handleSubmit} setFormData={setFormData} />
+          {/* Right - Connect Section */}
+          <Socials />
         </div>
       </Container>
     </div>

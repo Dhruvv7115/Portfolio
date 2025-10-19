@@ -63,10 +63,12 @@ export default function ExperienceCard({
             </div>
           ))}
         </div>
-        <div className="text-sm text-neutral-500 flex items-center gap-2">
-          <IconMapPinFilled className="h-5 w-5 shrink-0 inline-block text-neutral-400" />
-          <span>{experience.location}</span>
-        </div>
+        {experience.location && (
+          <div className="text-sm text-neutral-500 flex items-center gap-2">
+            <IconMapPinFilled className="h-5 w-5 shrink-0 inline-block text-neutral-400" />
+            <span>{experience.location}</span>
+          </div>
+        )}
       </div>
       <Image
         height={100}
