@@ -26,41 +26,36 @@ export default function ExperienceCard({
         <p className="text-sm text-neutral-500">{experience.description}</p>
         <div className="my-4 flex flex-wrap gap-2">
           {experience.techStack.map((tech, index) => (
-            <div
+            <motion.div
               key={tech.name + index}
+              initial="rest"
+              whileHover="hover"
+              transition={{
+                duration: 0.3,
+                delay: 0,
+                ease: "easeInOut",
+              }}
               className="flex items-center justify-start rounded-full border border-neutral-200 bg-neutral-100 p-1 text-xs text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 -mr-3 hover:z-10 cursor-pointer"
             >
               <motion.span
-                initial="rest"
-                whileHover="hover"
-                transition={{
-                  duration: 0.3,
-                  delay: 0,
-                  ease: "easeInOut",
-                }}
                 variants={{
                   rest: { paddingRight: 0 },
                   hover: { paddingRight: 2 },
                 }}
-                className="flex items-center"
+                className="flex items-center justify-center"
               >
                 <tech.icon size={20} className="h-4 w-4 shrink-0" />
-                <motion.span
-                  variants={{
-                    rest: { width: 0 },
-                    hover: { width: "auto" },
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: 0,
-                    ease: "easeInOut",
-                  }}
-                  className="overflow-hidden whitespace-nowrap text-neutral-500 dark:text-neutral-200"
-                >
-                  &nbsp;{tech.name}
-                </motion.span>
               </motion.span>
-            </div>
+              <motion.span
+                variants={{
+                  rest: { width: 0 },
+                  hover: { width: "auto" },
+                }}
+                className="overflow-hidden whitespace-nowrap text-neutral-500 dark:text-neutral-200"
+              >
+                &nbsp;{tech.name}
+              </motion.span>
+            </motion.div>
           ))}
         </div>
         {experience.location && (
