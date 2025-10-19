@@ -15,7 +15,7 @@ export default function LandingContactForm() {
         <input
           type="email"
           placeholder="Your email"
-          className="w-full rounded-lg bg-white px-4 py-3 pr-[120px] text-sm text-neutral-700 shadow-[var(--shadow-aceternity)] focus:ring-2 focus:ring-neutral-300 focus:outline-none dark:bg-neutral-800 dark:text-neutral-200"
+          className="w-full rounded-lg bg-neutral-50 px-4 py-3 pr-[120px] text-sm text-neutral-700 shadow-[var(--shadow-aceternity)] focus:ring-2 focus:ring-neutral-300 focus:outline-none dark:bg-neutral-800 dark:text-neutral-200"
         />
         <Link
           href="mailto:dhruvsabharwal@gmail.com"

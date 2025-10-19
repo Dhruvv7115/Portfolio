@@ -55,12 +55,12 @@ const Background = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, ease: "easeInOut", delay: 1 }}
-      className="absolute inset-0 h-full w-full scale-[1.04] bg-neutral-100 dark:bg-neutral-900"
+      className="absolute inset-0 h-full w-full scale-[1.04] bg-neutral-100 dark:bg-neutral-800"
     >
-      <div className="absolute animate-pulse -top-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
-      <div className="absolute animate-pulse -top-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
-      <div className="absolute animate-pulse -bottom-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
-      <div className="absolute animate-pulse -bottom-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-800"></div>
+      <div className="absolute animate-pulse -top-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-700"></div>
+      <div className="absolute animate-pulse -top-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-700"></div>
+      <div className="absolute animate-pulse -bottom-px -left-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-700"></div>
+      <div className="absolute animate-pulse -bottom-px -right-px rounded-full h-1 w-1 bg-neutral-200 dark:bg-neutral-700"></div>
     </motion.div>
   );
 };

@@ -12,18 +12,18 @@ export const Footer = () => {
     <footer>
       <Container>
         <div className="flex items-center justify-between p-4">
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-neutral-500">
             Built with love by Dhruv Sabharwal
           </p>
           <div className="flex items-center gap-4">
             <Link href="https://x.com/Dhruvv7115" target="_blank">
-              <IconBrandX className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:hover:text-neutral-300" />
+              <IconBrandX className="h-4 w-4 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300" />
             </Link>
             <Link href="https://github.com/Dhruvv7115" target="_blank">
-              <IconBrandGithub className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:hover:text-neutral-300" />
+              <IconBrandGithub className="h-4 w-4 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300" />
             </Link>
             <Link href="https://instagram.com/dhruvv7115" target="_blank">
-              <IconBrandInstagram className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:hover:text-neutral-300" />
+              <IconBrandInstagram className="h-4 w-4 text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300" />
             </Link>
           </div>
         </div>

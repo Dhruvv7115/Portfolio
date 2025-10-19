@@ -46,7 +46,7 @@ export default function Contact() {
           Get in touch with me for any questions, collaborations, or just to say
           hello! I&#39;d love to hear from you and discuss new opportunities.
         </Subheading>
-        <div className="shadow-section-inset h-full w-full grid grid-cols-1 md:grid-cols-2 mt-4">
+        <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 mt-4">
           <ContactForm handleSubmit={handleSubmit} setFormData={setFormData} />
           {/* Right - Connect Section */}
           <Socials />

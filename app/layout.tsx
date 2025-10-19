@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import { Footer } from "@/components/navbar/Footer";
 import { ViewTransitions } from "next-view-transitions";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,16 +27,23 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body>
-          <main
-            className={`${inter.variable} relative overflow-x-hidden bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-100)]/5`}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            <Toaster position="top-center" />
-            <Navbar />
-            {children}
-            <Footer />
-          </main>
+            <main
+              className={`${inter.variable} relative overflow-x-hidden bg-neutral-100 antialiased [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-950 dark:[--pattern-fg:var(--color-neutral-100)]/5`}
+            >
+              <Toaster position="top-center" />
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
+          </ThemeProvider>
         </body>
       </html>
     </ViewTransitions>

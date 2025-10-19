@@ -45,8 +45,8 @@ export function DraggableCardDemo() {
       <SectionHeading className="ml-4 md:ml-6">
         Exploring new ideas.
       </SectionHeading>
-      <DraggableCardContainer className="relative flex min-h-[30rem] mt-6 shadow-section-inset w-full items-center justify-center overflow-clip">
-        <p className="absolute top-1/2 mx-auto max-w-md -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-3xl dark:text-neutral-800">
+      <DraggableCardContainer className="relative flex min-h-[30rem] my-4 w-full items-center justify-center overflow-clip">
+        <p className="absolute top-1/2 mx-auto max-w-md -translate-y-3/4 text-center text-2xl px-6 font-black text-neutral-400 md:text-3xl dark:text-neutral-600">
           I Love Exploring New Technologies and Building Amazing Projects.
         </p>
         {items.map((item) => (

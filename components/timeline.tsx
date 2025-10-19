@@ -82,7 +82,7 @@ export const Timeline = () => {
             <motion.h3
               initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="shadow-aceternity dark:shadow-aceternity-dark w-fit rounded-md  px-2 py-0.5 text-lg font-bold text-black dark:bg-neutral-800 dark:text-white"
             >
@@ -117,7 +117,7 @@ export const Timeline = () => {
                   </motion.p>
                 </div>
                 <div>
-                  <p className="text-secondary dark:text-secondary-dark text-sm font-medium">
+                  <p className="text-secondary dark:text-secondary-dark hidden md:block text-sm font-medium">
                     {content.date}
                   </p>
                 </div>

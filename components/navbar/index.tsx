@@ -9,8 +9,9 @@ import {
   useTransform,
 } from "motion/react";
 import { Link } from "next-view-transitions";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconMoon, IconSun, IconX } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 interface NavItem {
   name: string;
@@ -18,6 +19,7 @@ interface NavItem {
 }
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme();
   const navItems: NavItem[] = [
     {
       name: "About",
@@ -90,6 +92,34 @@ export default function Navbar() {
             />
           </Link>
           <div className="flex items-center">
+            {/* single button with data-theme checks */}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="flex items-center rounded-md px-2 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            >
+              <motion.span
+                className="inline-block"
+                initial={{
+                  opacity: 0,
+                  rotate: 180,
+                }}
+                animate={{
+                  opacity: 1,
+                  rotate: 0,
+                }}
+                whileTap={{
+                  opacity: 0,
+                  rotate: 180,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+              >
+                <IconSun className="w-4 h-4 dark:block hidden" />
+                <IconMoon className="w-4 h-4 block dark:hidden" />
+              </motion.span>
+            </button>
             {navItems.map((item, idx) => (
               <Link
                 className="relative px-2 py-1 text-base"
@@ -125,12 +155,41 @@ export default function Navbar() {
               height={100}
             />
           </Link>
-          <button
-            className="flex h-10 w-10 items-center justify-center rounded-md text-neutral-700 dark:text-neutral-200"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <IconMenu2 />
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="flex items-center rounded-md px-2 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            >
+              <motion.span
+                className="inline-block"
+                initial={{
+                  opacity: 0,
+                  rotate: 180,
+                }}
+                animate={{
+                  opacity: 1,
+                  rotate: 0,
+                }}
+                whileTap={{
+                  opacity: 0,
+                  rotate: 180,
+                }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+              >
+                <IconSun className="w-4 h-4 dark:block hidden" />
+                <IconMoon className="w-4 h-4 block dark:hidden" />
+              </motion.span>
+            </button>
+            <button
+              className="flex h-10 w-10 items-center justify-center rounded-md text-neutral-700 dark:text-neutral-200"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <IconMenu2 />
+            </button>
+          </div>
         </div>
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 flex flex-col bg-white dark:bg-neutral-900">

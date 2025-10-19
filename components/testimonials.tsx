@@ -28,7 +28,7 @@ export default function Testimonials() {
     },
   ];
   return (
-    <div className="py-6 px-4 md:px-6 shadow-section-inset border-y border-neutral-100 mb-6">
+    <div className="py-6 px-4 md:px-6 mb-6">
       <SectionHeading className="mb-4">People love my work</SectionHeading>
       <div className="flex items-stretch [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
         <Marquee speed={25} pauseOnHover className="py-4">
@@ -52,7 +52,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <div className="flex flex-col justify-between mx-4 gap-4 shadow-aceternity p-4 max-w-68 w-full h-54 rounded-xl">
-      <p className="text-sm text-gray-500">{quote}</p>
+      <p className="text-sm text-neutral-500">{quote}</p>
       <div className="flex items-center gap-4">
         <Image
           src={avatar}

@@ -19,7 +19,7 @@ export const Heading = ({
       viewport={{ once: true }}
     >
       <Tag
-        className={`text-primary dark:text-primary-dark px-4 md:pl-6 md:pr-4 text-3xl font-bold tracking-tighter drop-shadow-primary dark:drop-shadow-primary-dark drop-shadow-lg/30 md:text-5xl ${className}`}
+        className={`text-primary px-4 md:px-6 text-3xl font-bold tracking-tighter drop-shadow-lg md:text-5xl ${className}`}
       >
         {children}
       </Tag>

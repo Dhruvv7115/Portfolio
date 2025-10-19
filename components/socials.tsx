@@ -2,13 +2,9 @@ import React from "react";
 import SectionHeading from "@/components/section-heading";
 import { Subheading } from "@/components/subheading";
 import { Link } from "next-view-transitions";
-import { GmailIcon } from "@/components/brand-svgs";
+import { GitHubIcon, GmailIcon, LinkedInIcon } from "@/components/brand-svgs";
 import { Button } from "@/components/ui/button";
-import {
-  IconBrandGithubFilled,
-  IconBrandLinkedinFilled,
-  IconBrandXFilled,
-} from "@tabler/icons-react";
+import { IconBrandXFilled } from "@tabler/icons-react";
 import { Social } from "@/types/socials";
 
 const socials: Social[] = [
@@ -20,20 +16,19 @@ const socials: Social[] = [
   {
     name: "Github",
     href: "https://github.com/dhruvv7115",
-    icon: IconBrandGithubFilled,
-    color: "#000000",
+    icon: GitHubIcon,
   },
   {
     name: "Linkedin",
     href: "https://linkedin.com/in/dhruvv7115",
-    icon: IconBrandLinkedinFilled,
-    color: "#0A66C2",
+    icon: LinkedInIcon,
   },
   {
     name: "X",
     href: "https://x.com/dhruvv7115",
     icon: IconBrandXFilled,
     color: "#000000",
+    darkColor: "#ffffff",
   },
 ];
 
@@ -56,7 +51,13 @@ export default function Socials() {
             className="flex items-center gap-3 text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
           >
             <Button variant="outline" className="p-1">
-              <social.icon color={social.color} />
+              {social.color && social.darkColor ? (
+                <social.icon
+                  className={`fill-[${social.color}] dark:fill-[${social.darkColor}]`}
+                />
+              ) : (
+                <social.icon />
+              )}
             </Button>
             {social.name}:{" "}
             {social.href.replace("https://", "").replace("mailto:", "")}

@@ -9,4 +9,5 @@ export type Social = {
       >
     | React.ForwardRefExoticComponent<{ color?: string; size?: number }>;
   color?: string;
+  darkColor?: string;
 };
