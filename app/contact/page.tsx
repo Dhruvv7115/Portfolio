@@ -18,8 +18,9 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, email, message } = formData;
     if (!name.trim() || !email.trim() || !message.trim()) {
@@ -27,15 +28,38 @@ export default function Contact() {
       toast.error("Please fill all the fields");
       return;
     }
-    // TODO: Add form submission logic
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-    toast.success("Form submitted successfully");
 
-    console.log("Form submitted");
+    // TODO: Add form submission logic 🥳✅
+    try {
+      setLoading(true);
+      // Call the API route
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      // Success 🎉
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="flex min-h-screen items-start justify-start">
@@ -47,7 +71,12 @@ export default function Contact() {
           hello! I&#39;d love to hear from you and discuss new opportunities.
         </Subheading>
         <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 mt-4">
-          <ContactForm handleSubmit={handleSubmit} setFormData={setFormData} />
+          <ContactForm
+            handleSubmit={handleSubmit}
+            formData={formData}
+            setFormData={setFormData}
+            loading={loading}
+          />
           {/* Right - Connect Section */}
           <Socials />
         </div>

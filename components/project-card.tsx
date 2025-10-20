@@ -49,8 +49,8 @@ export default function ProjectCard({
         <Image
           src={project?.image}
           alt={project?.title}
-          height={300}
-          width={300}
+          height={500}
+          width={500}
           loading="lazy"
           decoding="async"
           className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] min-h-48"

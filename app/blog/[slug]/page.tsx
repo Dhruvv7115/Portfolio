@@ -3,12 +3,13 @@ import Container from "@/components/container";
 import { getBlogFrontMatterBySlug, getSingleBlog } from "@/utils/blogService";
 import { redirect } from "next/navigation";
 import Scales from "@/components/scales";
+import { Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const frontmatter = await getBlogFrontMatterBySlug(slug);
   if (!frontmatter) {
