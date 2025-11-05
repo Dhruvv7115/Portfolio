@@ -1,4 +1,4 @@
-import { Project } from "@/types/project";
+import {Project} from "@/types/project";
 import {
   Css3Icon,
   ExpressIcon,
@@ -63,6 +63,39 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "SecondBrain",
+    image: "/projects/secondBrain.png",
+    href: "https://your-second-brain.vercel.app/",
+    description:
+      "A digital knowledge management platform that lets you save and organize web content as rich, interactive embeds. Easily store and categorize links from platforms like YouTube, Twitter, Instagram, and LinkedIn, creating a searchable personal knowledge base. Built with a modern tech stack for a seamless user experience.",
+    techStack: [
+      {
+        name: "React",
+        icon: ReactIcon,
+      },
+      {
+        name: "Typescript",
+        icon: TypeScriptIcon,
+      },
+      {
+        name: "TailwindCSS",
+        icon: TailwindCssIcon,
+      },
+      {
+        name: "Express",
+        icon: ExpressIcon,
+      },
+      {
+        name: "Nodejs",
+        icon: NodeJsIcon,
+      },
+      {
+        name: "MongoDB",
+        icon: MongoDbIcon,
+      },
+    ],
+  },
+  {
     title: "StayFinder",
     image: "/projects/stayFinder.png",
     href: "https://stay-finder-oo91.vercel.app/",
@@ -109,27 +142,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Blog Website",
-    image: "/projects/blogWebsite.png",
-    href: "#",
-    description:
-      "A simple blog website made with React, TailwindCSS, and Appwrite.",
-    techStack: [
-      {
-        name: "React",
-        icon: ReactIcon,
-      },
-      {
-        name: "TailwindCSS",
-        icon: TailwindCssIcon,
-      },
-      {
-        name: "Firebase",
-        icon: FirebaseIcon,
-      },
-    ],
-  },
-  {
     title: "Amazon Clone",
     image: "/projects/amazonClone.png",
     href: "https://dhruvv7115.github.io/Amazon-Clone/",
@@ -147,6 +159,27 @@ export const projects: Project[] = [
       {
         name: "HTML",
         icon: Html5Icon,
+      },
+    ],
+  },
+  {
+    title: "Blog Website",
+    image: "/projects/blogWebsite.png",
+    href: "#",
+    description:
+      "A simple blog website made with React, TailwindCSS, and Appwrite.",
+    techStack: [
+      {
+        name: "React",
+        icon: ReactIcon,
+      },
+      {
+        name: "TailwindCSS",
+        icon: TailwindCssIcon,
+      },
+      {
+        name: "Firebase",
+        icon: FirebaseIcon,
       },
     ],
   },
