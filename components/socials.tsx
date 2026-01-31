@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeading from "@/components/section-heading";
 import { Subheading } from "@/components/subheading";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { GitHubIcon, GmailIcon, LinkedInIcon } from "@/components/brand-svgs";
 import { Button } from "@/components/ui/button";
 import { IconBrandXFilled } from "@tabler/icons-react";

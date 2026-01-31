@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeading from "@/components/section-heading";
 import { Subheading } from "@/components/subheading";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 export default function LandingContactForm() {
   return (

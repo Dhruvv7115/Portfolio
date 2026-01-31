@@ -1,5 +1,5 @@
 import { getAllBlogs } from "@/utils/blogService";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import React from "react";
 import SectionHeading from "@/components/section-heading";
 import MotionDiv from "@/components/motion-div";

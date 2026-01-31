@@ -4,7 +4,7 @@ import { Subheading } from "@/components/subheading";
 import Container from "@/components/container";
 import { Metadata } from "next";
 import { getAllBlogs } from "@/utils/blogService";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import Scales from "@/components/scales";
 import { truncate } from "@/utils/truncate";
 import Image from "next/image";
