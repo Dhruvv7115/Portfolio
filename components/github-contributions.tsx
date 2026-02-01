@@ -1,8 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
 import Link from "next/link";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Dumbbell } from "lucide-react";
+import { IconBolt, IconFlame, IconFlameFilled } from "@tabler/icons-react";
 
 interface ContributionDay {
 	date: string;
@@ -125,9 +132,23 @@ export default function GitHubContributions({ username, token }: Props) {
 		return "#a1a1a1";
 	};
 
-	const getContributionMessage = (count: number): string => {
-		if (count < 9) return "";
-		return "A lot of contributions";
+	const getContributionMessage = (count: number): ReactElement => {
+		const random = Math.floor(Math.random() * 10);
+		if (count === 1) return <div>{count} contribution</div>;
+		if (count > 9)
+			return (
+				<div className="flex items-center gap-1">
+					{random <= 3 ? (
+						<Dumbbell className="h-4 w-4" />
+					) : random <= 6 ? (
+						<IconBolt className="h-4 w-4" />
+					) : (
+						<IconFlameFilled className="h-4 w-4" />
+					)}
+					<div>{count} contributions</div>
+				</div>
+			);
+		return <div>{count} contributions</div>;
 	};
 
 	const getMonthLabels = () => {
@@ -221,63 +242,52 @@ export default function GitHubContributions({ username, token }: Props) {
 									const color = getContributionColor(day.contributionCount);
 
 									return (
-										<rect
-											key={`${weekIndex}-${dayIndex}`}
-											x={x}
-											y={y}
-											width={cellSize}
-											height={cellSize}
-											rx={2}
-											fill={color}
-											className="cursor-pointer transition-all hover:stroke-neutral-400"
-											strokeWidth={
-												hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
-											}
-											stroke="#a3a3a3"
-											onMouseEnter={() => {
-												setHoveredDay({
-													count: day.contributionCount,
-													date: day.date,
-													x,
-													y,
-												});
-											}}
-											onMouseLeave={() => setHoveredDay(null)}
-										/>
+										<Tooltip>
+											<TooltipTrigger
+												key={`${weekIndex}-${dayIndex}`}
+												asChild
+											>
+												<rect
+													x={x}
+													y={y}
+													width={cellSize}
+													height={cellSize}
+													rx={2}
+													fill={color}
+													className="cursor-pointer transition-all hover:stroke-neutral-400"
+													strokeWidth={
+														hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
+													}
+													stroke="#a3a3a3"
+													onMouseEnter={() => {
+														setHoveredDay({
+															count: day.contributionCount,
+															date: day.date,
+															x,
+															y,
+														});
+													}}
+													onMouseLeave={() => setHoveredDay(null)}
+												/>
+											</TooltipTrigger>
+											<TooltipContent className="text-black">
+												<div className="font-semibold whitespace-nowrap">
+													{getContributionMessage(day.contributionCount)}
+												</div>
+												<div className="text-neutral-400 text-[11px] mt-0.5">
+													{new Date(day.date).toLocaleDateString("en-US", {
+														month: "short",
+														day: "numeric",
+														year: "numeric",
+													})}
+												</div>
+											</TooltipContent>
+										</Tooltip>
 									);
 								}),
 							)}
 						</g>
 					</svg>
-
-					{/* Tooltip */}
-					{hoveredDay && (
-						<div
-							className="absolute bg-neutral-900 text-white text-xs rounded px-3 py-2 border border-neutral-700 shadow-lg pointer-events-none z-100 whitespace-nowrap"
-							style={{
-								left: `${hoveredDay.x}px`,
-								top: `${hoveredDay.y - 30}px`,
-								transform:
-									hoveredDay.x < 100
-										? "translateX(0)"
-										: hoveredDay.x > graphWidth - 100
-											? "translateX(-100%)"
-											: "translateX(-50%)",
-							}}
-						>
-							<div className="font-semibold whitespace-nowrap">
-								{hoveredDay.count} contribution
-								{hoveredDay.count !== 1 ? "s" : ""}
-							</div>
-							<div className="text-neutral-400 text-[11px] mt-0.5">
-								{new Date(hoveredDay.date).toLocaleDateString("en-US", {
-									month: "short",
-									day: "numeric",
-									year: "numeric",
-								})}
-							</div>
-						</div>
-					)}
 				</div>
 			</div>
 
