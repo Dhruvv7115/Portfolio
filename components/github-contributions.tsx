@@ -136,8 +136,8 @@ export default function GitHubContributions({ username, token }: Props) {
 		if (count >= 9)
 			return (
 				<div className="flex items-center gap-1">
-					<IconFlameFilled className="h-4 w-4" />
 					<div>{count} contributions</div>
+					<IconFlameFilled className="h-4 w-4" />
 				</div>
 			);
 		return <div>{count} contributions</div>;
@@ -258,11 +258,11 @@ export default function GitHubContributions({ username, token }: Props) {
 													onMouseLeave={() => setHoveredDay(null)}
 												/>
 											</TooltipTrigger>
-											<TooltipContent className="text-black">
+											<TooltipContent className="dark:text-neutral-900 text-neutral-100">
 												<div className="font-semibold whitespace-nowrap">
 													{getContributionMessage(day.contributionCount)}
 												</div>
-												<div className="text-neutral-400 text-[11px] mt-0.5">
+												<div className="text-neutral-400 dark:text-neutral-500 text-[11px] mt-0.5">
 													{new Date(day.date).toLocaleDateString("en-US", {
 														month: "short",
 														day: "numeric",
