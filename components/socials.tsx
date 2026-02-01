@@ -55,7 +55,7 @@ export default function Socials() {
 				{/* LEFT RAIL */}
 				<div className="grid h-full grid-rows-3 md:gap-6 gap-4 border-r ">
 					{socials.map((social) => (
-						<div className="border-y"></div>
+						<div key={social.href} className="border-y"></div>
 					))}
 				</div>
 
@@ -101,7 +101,7 @@ export default function Socials() {
 				{/* RIGHT RAIL */}
 				<div className="grid h-full grid-rows-3 md:gap-6 gap-4 border-l">
 					{socials.map((social) => (
-						<div className="border-y"></div>
+						<div key={social.href} className="border-y"></div>
 					))}
 				</div>
 			</div>
