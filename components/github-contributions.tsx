@@ -8,8 +8,7 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Dumbbell } from "lucide-react";
-import { IconBolt, IconFlameFilled } from "@tabler/icons-react";
+import { IconFlameFilled } from "@tabler/icons-react";
 
 interface ContributionDay {
 	date: string;
@@ -133,18 +132,11 @@ export default function GitHubContributions({ username, token }: Props) {
 	};
 
 	const getContributionMessage = (count: number): ReactElement => {
-		const random = Math.floor(Math.random() * 10);
 		if (count === 1) return <div>{count} contribution</div>;
-		if (count > 9)
+		if (count >= 9)
 			return (
 				<div className="flex items-center gap-1">
-					{random <= 3 ? (
-						<Dumbbell className="h-4 w-4" />
-					) : random <= 6 ? (
-						<IconBolt className="h-4 w-4" />
-					) : (
-						<IconFlameFilled className="h-4 w-4" />
-					)}
+					<IconFlameFilled className="h-4 w-4" />
 					<div>{count} contributions</div>
 				</div>
 			);
