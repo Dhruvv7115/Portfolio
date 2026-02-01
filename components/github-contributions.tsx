@@ -8,8 +8,7 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { IconFlameFilled } from "@tabler/icons-react";
-
+import { IconFlameFilled, IconTargetArrow } from "@tabler/icons-react";
 interface ContributionDay {
 	date: string;
 	contributionCount: number;
@@ -190,7 +189,7 @@ export default function GitHubContributions({ username, token }: Props) {
 	}
 
 	const monthLabels = getMonthLabels();
-	const cellSize = 13;
+	const cellSize = 12;
 	const cellGap = 4;
 	const cellWithGap = cellSize + cellGap;
 	const graphWidth = contributions.length * cellWithGap;
@@ -236,27 +235,45 @@ export default function GitHubContributions({ username, token }: Props) {
 									return (
 										<Tooltip key={`${weekIndex}-${dayIndex}`}>
 											<TooltipTrigger asChild>
-												<rect
-													x={x}
-													y={y}
-													width={cellSize}
-													height={cellSize}
-													rx={3}
-													className={`cursor-pointer transition-all hover:stroke-neutral-400 ${color}`}
-													strokeWidth={
-														hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
-													}
-													stroke="#a3a3a3"
-													onMouseEnter={() => {
+												<g
+													onMouseEnter={() =>
 														setHoveredDay({
 															count: day.contributionCount,
 															date: day.date,
 															x,
 															y,
-														});
-													}}
+														})
+													}
 													onMouseLeave={() => setHoveredDay(null)}
-												/>
+													className="cursor-pointer hover:scale-120 transition-all"
+												>
+													<rect
+														x={x}
+														y={y}
+														width={cellSize}
+														height={cellSize}
+														rx={3}
+														className={`transition-all ${
+															day.contributionCount < 9
+																? color
+																: "fill-blue-400"
+														}`}
+														stroke="#a3a3a3"
+														strokeWidth={
+															hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
+														}
+													/>
+
+													{day.contributionCount >= 9 && (
+														<IconTargetArrow
+														  x={x + 1}
+															y={y + 1}
+															width={10}
+															height={10}
+															className="pointer-events-none stroke-neutral-50"
+														/>
+													)}
+												</g>
 											</TooltipTrigger>
 											<TooltipContent className="dark:text-neutral-900 text-neutral-100">
 												<div className="font-semibold whitespace-nowrap">
