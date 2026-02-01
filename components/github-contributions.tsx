@@ -9,7 +9,7 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dumbbell } from "lucide-react";
-import { IconBolt, IconFlame, IconFlameFilled } from "@tabler/icons-react";
+import { IconBolt, IconFlameFilled } from "@tabler/icons-react";
 
 interface ContributionDay {
 	date: string;
@@ -126,10 +126,10 @@ export default function GitHubContributions({ username, token }: Props) {
 
 	const getContributionColor = (count: number): string => {
 		if (count === 0) return "#262626";
-		if (count < 3) return "#404040";
-		if (count < 6) return "#525252";
-		if (count < 9) return "#737373";
-		return "#a1a1a1";
+		if (count <= 3) return "#525252";
+		if (count <= 6) return "#737373";
+		if (count <= 9) return "#a1a1a1";
+		return "#e5e5e5";
 	};
 
 	const getContributionMessage = (count: number): ReactElement => {
@@ -252,7 +252,7 @@ export default function GitHubContributions({ username, token }: Props) {
 													y={y}
 													width={cellSize}
 													height={cellSize}
-													rx={2}
+													rx={3}
 													fill={color}
 													className="cursor-pointer transition-all hover:stroke-neutral-400"
 													strokeWidth={
@@ -292,7 +292,7 @@ export default function GitHubContributions({ username, token }: Props) {
 			</div>
 
 			{/* Footer */}
-			<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-4 text-xs text-neutral-500">
+			<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-4 text-xs text-neutral-500">
 				<div className="text-muted-foreground">
 					{totalContributions} contribution
 					{totalContributions !== 1 ? "s" : ""} in the last year on{" "}
@@ -305,64 +305,65 @@ export default function GitHubContributions({ username, token }: Props) {
 				</div>
 
 				{/* Legend */}
-				<div className="flex items-center gap-1.5">
-					<span className="text-[11px]">Less</span>
+				<div className="flex items-center gap-1">
+					<span className="text-muted-foreground mr-1">Less</span>
 					<svg
-						width="10"
-						height="10"
+						width="13"
+						height="13"
 					>
 						<rect
-							width="10"
-							height="10"
-							rx="2"
+							width="13"
+							height="13"
+							rx="3"
 							fill="#262626"
 						/>
 					</svg>
 					<svg
-						width="10"
-						height="10"
+						width="13"
+						height="13"
 					>
 						<rect
-							width="10"
-							height="10"
-							rx="2"
-							fill="#404040"
-						/>
-					</svg>
-					<svg
-						width="10"
-						height="10"
-					>
-						<rect
-							width="10"
-							height="10"
-							rx="2"
+							width="13"
+							height="13"
+							rx="3"
 							fill="#525252"
 						/>
 					</svg>
+					
 					<svg
-						width="10"
-						height="10"
+						width="13"
+						height="13"
 					>
 						<rect
-							width="10"
-							height="10"
-							rx="2"
+							width="13"
+							height="13"
+							rx="3"
 							fill="#737373"
 						/>
 					</svg>
 					<svg
-						width="10"
-						height="10"
+						width="13"
+						height="13"
 					>
 						<rect
-							width="10"
-							height="10"
-							rx="2"
+							width="13"
+							height="13"
+							rx="3"
 							fill="#a1a1a1"
 						/>
 					</svg>
-					<span className="text-[11px]">More</span>
+					<svg
+						width="13"
+						height="13"
+					>
+						<rect
+							width="13"
+							height="13"
+							rx="3"
+							fill="#e5e5e5"
+						/>
+					</svg>
+					<span className="text-muted-foreground ml-1">More</span>
 				</div>
 			</div>
 		</section>
