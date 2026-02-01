@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import { Footer } from "@/components/navbar/Footer";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -45,6 +46,7 @@ export default function RootLayout({
 						<Footer />
 					</main>
 				</ThemeProvider>
+				<SpeedInsights />
 			</body>
 		</html>
 	);
