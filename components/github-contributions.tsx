@@ -125,11 +125,11 @@ export default function GitHubContributions({ username, token }: Props) {
 	};
 
 	const getContributionColor = (count: number): string => {
-		if (count === 0) return "#262626";
-		if (count <= 3) return "#525252";
-		if (count <= 6) return "#737373";
-		if (count <= 9) return "#a1a1a1";
-		return "#e5e5e5";
+		if (count === 0) return "fill-neutral-200 dark:fill-neutral-800";
+		if (count <= 3) return "fill-neutral-400 dark:fill-neutral-600";
+		if (count <= 6) return "fill-neutral-600 dark:fill-neutral-400";
+		if (count <= 9) return "fill-neutral-800 dark:fill-neutral-200";
+		return "fill-neutral-950 dark:fill-neutral-50";
 	};
 
 	const getContributionMessage = (count: number): ReactElement => {
@@ -242,19 +242,15 @@ export default function GitHubContributions({ username, token }: Props) {
 									const color = getContributionColor(day.contributionCount);
 
 									return (
-										<Tooltip>
-											<TooltipTrigger
-												key={`${weekIndex}-${dayIndex}`}
-												asChild
-											>
+										<Tooltip key={`${weekIndex}-${dayIndex}`}>
+											<TooltipTrigger asChild>
 												<rect
 													x={x}
 													y={y}
 													width={cellSize}
 													height={cellSize}
 													rx={3}
-													fill={color}
-													className="cursor-pointer transition-all hover:stroke-neutral-400"
+													className={`cursor-pointer transition-all hover:stroke-neutral-400 ${color}`}
 													strokeWidth={
 														hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
 													}
@@ -315,7 +311,7 @@ export default function GitHubContributions({ username, token }: Props) {
 							width="13"
 							height="13"
 							rx="3"
-							fill="#262626"
+							className="fill-neutral-200 dark:fill-neutral-800"
 						/>
 					</svg>
 					<svg
@@ -326,10 +322,10 @@ export default function GitHubContributions({ username, token }: Props) {
 							width="13"
 							height="13"
 							rx="3"
-							fill="#525252"
+							className="fill-neutral-400 dark:fill-neutral-600"
 						/>
 					</svg>
-					
+
 					<svg
 						width="13"
 						height="13"
@@ -338,18 +334,7 @@ export default function GitHubContributions({ username, token }: Props) {
 							width="13"
 							height="13"
 							rx="3"
-							fill="#737373"
-						/>
-					</svg>
-					<svg
-						width="13"
-						height="13"
-					>
-						<rect
-							width="13"
-							height="13"
-							rx="3"
-							fill="#a1a1a1"
+							className="fill-neutral-600 dark:fill-neutral-400"
 						/>
 					</svg>
 					<svg
@@ -360,7 +345,18 @@ export default function GitHubContributions({ username, token }: Props) {
 							width="13"
 							height="13"
 							rx="3"
-							fill="#e5e5e5"
+							className="fill-neutral-800 dark:fill-neutral-200"
+						/>
+					</svg>
+					<svg
+						width="13"
+						height="13"
+					>
+						<rect
+							width="13"
+							height="13"
+							rx="3"
+							className="fill-neutral-950 dark:fill-neutral-50"
 						/>
 					</svg>
 					<span className="text-muted-foreground ml-1">More</span>
