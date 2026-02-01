@@ -194,3 +194,11 @@
         @apply bg-background text-foreground;
     }
 }
+
+
+.corner-squircle {
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle; /* Applies the true squircle curve */
+    border-radius: 50%;
+  }
+}

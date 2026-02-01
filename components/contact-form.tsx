@@ -19,7 +19,7 @@ export default function ContactForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 px-6 py-8 shadow-section"
+      className="flex flex-col gap-4 px-6 md:py-6 py-4 shadow-section"
     >
       <SectionHeading>Send me a message</SectionHeading>
       <label htmlFor="name">Name</label>
