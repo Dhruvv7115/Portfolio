@@ -10,7 +10,7 @@ import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { Metadata } from "next";
 import LandingContactForm from "@/components/landing-contact-form";
 import Experience from "@/components/experience";
-import GitHubContributions from "@/components/github-contributions";
+import GitHubContributions from "@/components/github-contribution/github-contributions";
 
 export const metadata: Metadata = {
 	title: "Portfolio | Dhruv Sabharwal",

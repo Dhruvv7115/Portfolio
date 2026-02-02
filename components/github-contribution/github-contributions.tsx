@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../section-heading";
 import Link from "next/link";
 import {
 	Tooltip,
@@ -9,6 +9,7 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { IconFlameFilled, IconTargetArrow } from "@tabler/icons-react";
+import ContributionFallback from "../github-contribution/contribution-fallback";
 interface ContributionDay {
 	date: string;
 	contributionCount: number;
@@ -39,6 +40,7 @@ export default function GitHubContributions({ username, token }: Props) {
 	}, [username, token]);
 
 	const fetchContributions = async () => {
+		setLoading(true);
 		const now = new Date();
 
 		// toDate = yesterday (local, end of day)
@@ -180,12 +182,7 @@ export default function GitHubContributions({ username, token }: Props) {
 	};
 
 	if (loading) {
-		return (
-			<section className="py-6 px-4 md:px-6">
-				<SectionHeading>GitHub Contributions</SectionHeading>
-				<div className="text-neutral-500 text-sm">Loading contributions...</div>
-			</section>
-		);
+		return <ContributionFallback />;
 	}
 
 	const monthLabels = getMonthLabels();
@@ -266,7 +263,7 @@ export default function GitHubContributions({ username, token }: Props) {
 
 													{day.contributionCount >= 9 && (
 														<IconTargetArrow
-														  x={x + 1}
+															x={x + 1}
 															y={y + 1}
 															width={10}
 															height={10}
