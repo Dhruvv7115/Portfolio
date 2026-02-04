@@ -230,35 +230,34 @@ export default function GitHubContributions({ username, token }: Props) {
 									const color = getContributionColor(day.contributionCount);
 
 									return (
-										<Tooltip key={`${weekIndex}-${dayIndex}`}>
+										<Tooltip
+											key={`${weekIndex}-${dayIndex}`}
+											onOpenChange={(open) => {
+												if (open) {
+													setHoveredDay({
+														count: day.contributionCount,
+														date: day.date,
+														x,
+														y,
+													});
+												} else {
+													setHoveredDay(null);
+												}
+											}}
+										>
 											<TooltipTrigger asChild>
-												<g
-													onMouseEnter={() =>
-														setHoveredDay({
-															count: day.contributionCount,
-															date: day.date,
-															x,
-															y,
-														})
-													}
-													onMouseLeave={() => setHoveredDay(null)}
-													className="cursor-pointer hover:scale-120 transition-all"
-												>
+												<g className="cursor-pointer">
 													<rect
 														x={x}
 														y={y}
 														width={cellSize}
 														height={cellSize}
 														rx={3}
-														className={`transition-all ${
-															day.contributionCount < 9
-																? color
-																: "fill-blue-400"
-														}`}
+														className={`
+															${day.contributionCount < 9 ? color : "fill-blue-400"}
+															`}
 														stroke="#a3a3a3"
-														strokeWidth={
-															hoveredDay?.x === x && hoveredDay?.y === y ? 1 : 0
-														}
+														strokeWidth="0"
 													/>
 
 													{day.contributionCount >= 9 && (
@@ -272,9 +271,10 @@ export default function GitHubContributions({ username, token }: Props) {
 													)}
 												</g>
 											</TooltipTrigger>
+
 											<TooltipContent className="dark:text-neutral-900 text-neutral-100">
 												<div className="font-semibold whitespace-nowrap">
-													{getContributionMessage(day.contributionCount)}
+													{getContributionMessage(day.contributionCount)}{" "}
 												</div>
 												<div className="text-neutral-400 dark:text-neutral-500 text-[11px] mt-0.5">
 													{new Date(day.date).toLocaleDateString("en-US", {
