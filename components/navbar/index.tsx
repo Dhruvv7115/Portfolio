@@ -68,7 +68,7 @@ export default function Navbar() {
 
 	return (
 		<Container className="relative mx-auto h-full w-full max-w-5xl bg-white pt-10 md:pt-0 dark:bg-neutral-900">
-			<div className="fixed inset-x-0 top-0 z-50 mx-auto hidden max-w-5xl md:block px-10">
+			<div className="fixed inset-x-0 top-0 z-50 mx-auto hidden max-w-5xl md:block px-12">
 				<motion.nav
 					style={{
 						borderRadius,
@@ -80,7 +80,7 @@ export default function Navbar() {
 						duration: 0.3,
 						ease: "easeInOut",
 					}}
-					className="mx-auto flex max-w-5xl items-center justify-between rounded-full bg-white/50 px-3 py-2 backdrop-blur-sm dark:bg-neutral-900/50"
+					className="mx-auto flex max-w-5xl items-center justify-between rounded-full bg-white/50 px-3 py-2.5 backdrop-blur-sm dark:bg-neutral-900/50"
 				>
 					<Link href="/">
 						<Image
