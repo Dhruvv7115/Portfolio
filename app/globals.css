@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import "highlight.js/styles/stackoverflow-light.css";
+
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -123,6 +125,8 @@
     --shadow-aceternity: 0px 2px 3px -1px #ffffff1a, 0px 1px 0px 0px #ffffff05, 0px 0px 0px 1px #ffffff14;
     --shadow-section: 1px 0px 4px 0px var(--color-neutral-950) inset, 0px -1px 4px 0px var(--color-neutral-950) inset;
     --shadow-section-inset: 0px 1px 4px 0px var(--color-neutral-950) inset, 0px -1px 4px 0px var(--color-neutral-950) inset;
+
+    @import "highlight.js/styles/stackoverflow-dark.css";
 }
 
 @theme inline {
@@ -201,4 +205,18 @@
     corner-shape: squircle; /* Applies the true squircle curve */
     border-radius: 50%;
   }
+}
+
+
+.prose pre {
+  padding: 0;
+  border: solid 1px #e5e5e5;
+  .dark & {
+    border-color: #2a2a2a;
+  }
+  border-radius: 8px;
+}
+
+.prose pre code {
+  padding: 1rem; /* or whatever padding you want */
 }
