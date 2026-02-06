@@ -2,7 +2,7 @@ import rehypeHighlight from "rehype-highlight";
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
-
+import CodeBlock from "@/components/code-block";
 type Frontmatter = {
 	title: string;
 	description: string;
@@ -62,6 +62,9 @@ export async function getSingleBlog(slug: string) {
 			options: {
 				parseFrontmatter: true,
 				mdxOptions: { rehypePlugins: [rehypeHighlight] },
+			},
+			components: {
+				pre: CodeBlock,
 			},
 		});
 
