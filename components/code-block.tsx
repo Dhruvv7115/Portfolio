@@ -1,13 +1,35 @@
 "use client";
 
 import { IconCheck, IconClipboard } from "@tabler/icons-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function CodeBlock({ children, ...props }: any) {
+export default function CodeBlock({
+	children,
+	...props
+}: React.PropsWithChildren<React.ComponentPropsWithoutRef<"pre">>) {
 	const [copied, setCopied] = useState(false);
 
 	const handleCopy = async () => {
-		const code = children?.props?.children || "";
+		let code = "";
+		if (typeof children === "string") {
+			code = children;
+		} else if (React.isValidElement(children)) {
+			const element = children as React.ReactElement<
+				{
+					children?: React.ReactNode;
+				},
+				string | React.JSXElementConstructor<unknown>
+			>;
+			const inner = element.props?.children;
+			if (typeof inner === "string") code = inner;
+			else if (Array.isArray(inner))
+				code = inner
+					.map((item) => (typeof item === "string" ? item : String(item)))
+					.join("");
+			else code = String(inner ?? "");
+		} else {
+			code = String(children ?? "");
+		}
 		await navigator.clipboard.writeText(code);
 		setCopied(true);
 		setTimeout(() => setCopied(false), 2000);
