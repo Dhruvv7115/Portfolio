@@ -275,10 +275,10 @@ const TurboRepoIcon = ({
 					y2="9400.97"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 				<linearGradient
@@ -289,10 +289,10 @@ const TurboRepoIcon = ({
 					y2="9361.3"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 				<linearGradient
@@ -303,10 +303,10 @@ const TurboRepoIcon = ({
 					y2="7700.51"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 				<linearGradient
@@ -317,10 +317,10 @@ const TurboRepoIcon = ({
 					y2="4526.55"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 				<linearGradient
@@ -331,10 +331,10 @@ const TurboRepoIcon = ({
 					y2="1943.09"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 				<linearGradient
@@ -345,10 +345,10 @@ const TurboRepoIcon = ({
 					y2="1426.4"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop stop-color="#1e90ff"></stop>
+					<stop stopColor="#1e90ff"></stop>
 					<stop
 						offset="1"
-						stop-color="#ff1e56"
+						stopColor="#ff1e56"
 					></stop>
 				</linearGradient>
 			</defs>
