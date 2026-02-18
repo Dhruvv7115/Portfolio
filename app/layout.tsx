@@ -19,6 +19,9 @@ export const metadata: Metadata = {
 	title: "Portfolio | Dhruv Sabharwal",
 	description:
 		"A professional portfolio website of Dhruv Sabharwal showcases his skills and projects.",
+	verification: {
+		google: "pk7N0HSLb52ET0x1JBw89QYtbuqr_OS8ZLl4zBZkxng",
+	},
 };
 
 export default function RootLayout({
