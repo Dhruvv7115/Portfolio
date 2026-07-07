@@ -1,26 +1,10 @@
-import {
-  ExpressIcon,
-  GeminiIcon,
-  JavaScriptIcon,
-  MaterialUIIcon,
-  MongoDbIcon,
-  MotionIcon,
-  NodeJsIcon,
-  PostgresIcon,
-  ReactIcon,
-  ReactRouterIcon,
-  ReduxIcon,
-  RemixIcon,
-  ShadcnIcon,
-  TailwindCssIcon,
-} from "@/components/brand-svgs";
 import { Experience } from "@/types/experience";
+import { Express, GoogleGemini, Javascript, MaterialUi, Mongodb, Motion, Postgresql, React, ReactRouter, Redux, Remix, ShadcnUi, TailwindCss } from "@thesvg/react";
 
 export const experience: Experience[] = [
   {
     title: "Full Stack Developer Intern",
     company: "Katyayani Organics",
-    // location: "Bhopal, India | Remote",
     date: "July 2025 - Present",
     description:
       "Built Katyayani Organics' global connect platform for lead and client management using MERN stack with modern UI/UX.",
@@ -28,51 +12,47 @@ export const experience: Experience[] = [
     techStack: [
       {
         name: "Remix",
-        icon: RemixIcon,
+        icon: Remix,
       },
       {
         name: "React",
-        icon: ReactIcon,
+        icon: React,
       },
       {
         name: "React Router",
-        icon: ReactRouterIcon,
+        icon: ReactRouter,
       },
       {
         name: "Redux",
-        icon: ReduxIcon,
+        icon: Redux,
       },
       {
         name: "Tailwind CSS",
-        icon: TailwindCssIcon,
+        icon: TailwindCss,
       },
       {
         name: "Shadcn UI",
-        icon: ShadcnIcon,
+        icon: ShadcnUi,
       },
       {
         name: "Motion",
-        icon: MotionIcon,
+        icon: Motion,
       },
       {
         name: "Material UI",
-        icon: MaterialUIIcon,
-      },
-      {
-        name: "Node.js",
-        icon: NodeJsIcon,
+        icon: MaterialUi,
       },
       {
         name: "Express",
-        icon: ExpressIcon,
+        icon: Express,
       },
       {
         name: "PostgreSQL",
-        icon: PostgresIcon,
+        icon: Postgresql,
       },
       {
         name: "MongoDB",
-        icon: MongoDbIcon,
+        icon: Mongodb,
       },
     ],
   },
@@ -87,31 +67,27 @@ export const experience: Experience[] = [
     techStack: [
       {
         name: "React",
-        icon: ReactIcon,
+        icon: React,
       },
       {
-        name: "JavaScript",
-        icon: JavaScriptIcon,
+        name: "Javascript",
+        icon: Javascript,
       },
       {
         name: "Tailwind CSS",
-        icon: TailwindCssIcon,
-      },
-      {
-        name: "Node.js",
-        icon: NodeJsIcon,
+        icon: TailwindCss,
       },
       {
         name: "Express",
-        icon: ExpressIcon,
+        icon: Express,
       },
       {
         name: "MongoDB",
-        icon: MongoDbIcon,
+        icon: Mongodb,
       },
       {
         name: "Gemini AI",
-        icon: GeminiIcon,
+        icon: GoogleGemini,
       },
     ],
   },
