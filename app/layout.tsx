@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import { Footer } from "@/components/navbar/Footer";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "Portfolio | Dhruv Sabharwal",
+	title: "Dhruv Sabharwal | Full Stack Developer",
 	description:
-		"A professional portfolio website of Dhruv Sabharwal showcases his skills and projects.",
+		"I build high-performance, scalable, and user-centric web applications that transform ideas into seamless digital experiences.",
 	verification: {
 		google: "pk7N0HSLb52ET0x1JBw89QYtbuqr_OS8ZLl4zBZkxng",
 	},
