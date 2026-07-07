@@ -1,23 +1,108 @@
+import { BunIcon, NextJsIcon, NodeJsIcon, TurboRepoIcon } from "@/components/brand-svgs";
 import { Project } from "@/types/project";
 import {
-  BunIcon,
-	Css3Icon,
-	ExpressIcon,
-	FirebaseIcon,
-	Html5Icon,
-	JavaScriptIcon,
-	MongoDbIcon,
-	MotionIcon,
-	NextJsIcon,
-	NodeJsIcon,
-	ReactIcon,
-	ShadcnIcon,
-	TailwindCssIcon,
-	TurboRepoIcon,
-	TypeScriptIcon,
-} from "@/components/brand-svgs";
+	Appwrite,
+	AwsAmazonSimpleStorageService,
+	Clerk,
+	Css,
+	Express,
+	Html5,
+	Javascript,
+	LangchainCorporate,
+	Mongodb,
+	Motion,
+	Prisma,
+	React,
+	ReactHookForm,
+	ShadcnUi,
+	Stripe,
+	Supabase,
+	T3Stack,
+	TailwindCss,
+	Trpc,
+	Typescript,
+	Zod,
+} from "@thesvg/react";
 
 export const projects: Project[] = [
+	{
+		title: "Github AI Assistant",
+		image: "/projects/github-ai-assistant.png",
+		href: "https://githubaiassistant.vercel.app",
+		description:
+			"A RAG-powered AI assistant that ingests an entire GitHub repository, chunks the codebase, generates vector embeddings, and stores them in a PostgreSQL vector store for semantic search.",
+		techStack: [
+			{
+				name: "T3 Stack",
+				icon: T3Stack,
+			},
+			{
+				name: "Zod",
+				icon: Zod,
+			},
+			{
+				name: "Clerk",
+				icon: Clerk,
+			},
+			{
+				name: "Stripe",
+				icon: Stripe,
+			},
+			{
+				name: "LangChainJs",
+				icon: LangchainCorporate,
+			},
+			{
+				name: "React Hook Form",
+				icon: ReactHookForm,
+			},
+			{
+				name: "Supabase",
+				icon: Supabase,
+			},
+		],
+	},
+	{
+		title: "Chat With PDF",
+		image: "/projects/chat-with-pdf.png",
+		href: "https://chat-with-pdf-tau.vercel.app/",
+		description:
+			"A full-stack AI assistant that lets you chat with your PDF files.",
+		techStack: [
+			{
+				name: "Next.js",
+				icon: NextJsIcon,
+			},
+			{
+				name: "Typescript",
+				icon: Typescript,
+			},
+			{
+				name: "Zod",
+				icon: Zod,
+			},
+			{
+				name: "TRPC",
+				icon: Trpc,
+			},
+			{
+				name: "Prisma",
+				icon: Prisma,
+			},
+			{
+				name: "Stripe",
+				icon: Stripe,
+			},
+			{
+				name: "AWS S3",
+				icon: AwsAmazonSimpleStorageService,
+			},
+			{
+				name: "React-Hook-Form",
+				icon: ReactHookForm,
+			},
+		],
+	},
 	{
 		title: "Trading-N8N Automation",
 		image: "/projects/trading-n8n.png",
@@ -25,22 +110,22 @@ export const projects: Project[] = [
 		description:
 			"A Trading automation workflow platform like n8n, supports price and time based triggers.",
 		techStack: [
-      {
-        name: "TurboRepo",
-        icon: TurboRepoIcon,
-      },
 			{
-        name: "React",
-				icon: ReactIcon,
+				name: "TurboRepo",
+				icon: TurboRepoIcon,
 			},
 			{
-        name: "Typescript",
-        icon: TypeScriptIcon,
-      },
-      {
-        name: "Bun",
-        icon: BunIcon,
-      },
+				name: "React",
+				icon: React,
+			},
+			{
+				name: "Typescript",
+				icon: Typescript,
+			},
+			{
+				name: "Bun",
+				icon: BunIcon,
+			},
 		],
 	},
 	{
@@ -56,15 +141,15 @@ export const projects: Project[] = [
 			},
 			{
 				name: "Typescript",
-				icon: TypeScriptIcon,
+				icon: Typescript,
 			},
 			{
 				name: "Shadcn UI",
-				icon: ShadcnIcon,
+				icon: ShadcnUi,
 			},
 			{
 				name: "Motion",
-				icon: MotionIcon,
+				icon: Motion,
 			},
 		],
 	},
@@ -77,15 +162,15 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "JavaScript",
-				icon: JavaScriptIcon,
+				icon: Javascript,
 			},
 			{
 				name: "CSS",
-				icon: Css3Icon,
+				icon: Css,
 			},
 			{
 				name: "HTML",
-				icon: Html5Icon,
+				icon: Html5,
 			},
 		],
 	},
@@ -98,19 +183,19 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "React",
-				icon: ReactIcon,
+				icon: React,
 			},
 			{
 				name: "Typescript",
-				icon: TypeScriptIcon,
+				icon: Typescript,
 			},
 			{
 				name: "TailwindCSS",
-				icon: TailwindCssIcon,
+				icon: TailwindCss,
 			},
 			{
 				name: "Express",
-				icon: ExpressIcon,
+				icon: Express,
 			},
 			{
 				name: "Nodejs",
@@ -118,7 +203,7 @@ export const projects: Project[] = [
 			},
 			{
 				name: "MongoDB",
-				icon: MongoDbIcon,
+				icon: Mongodb,
 			},
 		],
 	},
@@ -131,15 +216,15 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "React",
-				icon: ReactIcon,
+				icon: React,
 			},
 			{
 				name: "TailwindCSS",
-				icon: TailwindCssIcon,
+				icon: TailwindCss,
 			},
 			{
 				name: "Express",
-				icon: ExpressIcon,
+				icon: Express,
 			},
 			{
 				name: "Nodejs",
@@ -147,7 +232,7 @@ export const projects: Project[] = [
 			},
 			{
 				name: "MongoDB",
-				icon: MongoDbIcon,
+				icon: Mongodb,
 			},
 		],
 	},
@@ -160,11 +245,11 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "React",
-				icon: ReactIcon,
+				icon: React,
 			},
 			{
 				name: "TailwindCSS",
-				icon: TailwindCssIcon,
+				icon: TailwindCss,
 			},
 		],
 	},
@@ -177,15 +262,15 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "JavaScript",
-				icon: JavaScriptIcon,
+				icon: Javascript,
 			},
 			{
 				name: "CSS",
-				icon: Css3Icon,
+				icon: Css,
 			},
 			{
 				name: "HTML",
-				icon: Html5Icon,
+				icon: Html5,
 			},
 		],
 	},
@@ -198,15 +283,15 @@ export const projects: Project[] = [
 		techStack: [
 			{
 				name: "React",
-				icon: ReactIcon,
+				icon: React,
 			},
 			{
 				name: "TailwindCSS",
-				icon: TailwindCssIcon,
+				icon: TailwindCss,
 			},
 			{
-				name: "Firebase",
-				icon: FirebaseIcon,
+				name: "Appwrite",
+				icon: Appwrite,
 			},
 		],
 	},
